@@ -1,0 +1,5 @@
+method=GET, uri=/user?user=1, status=200
+method=GET, uri=/user?user=1, status=200
+method=GET, uri=/user?user=1, status=200
+method=GET, uri=/user?user=1, status=200
+method=GET, uri=/user?user=1, status=200

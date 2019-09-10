@@ -1,1 +1,1 @@
-cleanbase
+MiniPay
