@@ -13,6 +13,7 @@ import (
 	"testing"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	//"github.com/bxcodec/faker"
 )
 
 func TestStore(t *testing.T) {
@@ -48,3 +49,32 @@ func TestStore(t *testing.T) {
 	assert.Equal(t, http.StatusOK, rec.Code)
 	mockUCase.AssertExpectations(t)
 }
+
+//func TestFetchs (t *testing.T){
+//	var mockArticle models.User
+//	err := faker.FakeData(&mockArticle)
+//	assert.NoError(t, err)
+//	mockUCase := new(mocks.Usecase)
+//	mockListArticle := make([]*models.User, 0)
+//	mockListArticle = append(mockListArticle, &models.User{})
+//	num := 1
+//	cursor := "2"
+//	mockUCase.On("FetchUsers", mock.Anything, cursor, int64(num)).Return(mockListArticle, 10, nil)
+//
+//	e := echo.New()
+//	req, err := http.NewRequest(echo.GET, "/alluser?num=1&cursor="+cursor, strings.NewReader(""))
+//	assert.NoError(t, err)
+//
+//	rec := httptest.NewRecorder()
+//	c := e.NewContext(req, rec)
+//	hand := handler.UserHandler{
+//		ATUsecase: mockUCase,
+//	}
+//	err = hand.FetchUsers(c)
+//	require.NoError(t, err)
+//
+//	//responseCursor := rec.Header().Get("x-cursor")
+//	//assert.Equal(t, "10", responseCursor)
+//	assert.Equal(t, http.StatusOK, rec.Code)
+//	mockUCase.AssertExpectations(t)
+//}

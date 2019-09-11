@@ -102,7 +102,7 @@ func (h *UserHandler) Home(c echo.Context) (err error){
 
 	res := library.SuccessResponse{
 		Message:"Success",
-		Result: "Hello",
+		Result: "Hello this endpoint",
 	}
 
 	return c.JSON(http.StatusOK, res)

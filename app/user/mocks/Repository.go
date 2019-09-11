@@ -36,13 +36,6 @@ func (_m *Repository) FetchUser(c context.Context, _a1 int64) (*models.User, err
 
 // FetchUsers provides a mock function with given fields: c, cursor, num
 func (_m *Repository) FetchUsers(c context.Context, cursor string, num int64) ([]*models.User, string, error) {
-	select {
-	case <-time.After(30 * time.Second):
-		c.Response().Header().Set(`X-Cursor`, "a")
-		return c.JSON(http.StatusOK, "Request process")
-	case <-c.Done():
-		fmt.Fprint(os.Stderr, "request cancelled \n")
-	}
 	ret := _m.Called(c, cursor, num)
 
 	var r0 []*models.User
